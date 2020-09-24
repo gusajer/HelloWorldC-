@@ -1,2 +1,2 @@
 # HelloWorldC-
-my C# Adventur in to 
+our Adventur in to C#
