@@ -1,5 +1,5 @@
 # HelloWorldC-
-our Adventur into the world of C# 
+Our Adventur into the world of C# 
 
 For at lære at bruge C# valgte vi at programmere en løsning på en opgave fra hjemmesiden www.codewars.com.<br/>
 Udfordringen hed:<br/>
