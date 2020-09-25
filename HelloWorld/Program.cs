@@ -23,6 +23,7 @@ namespace HelloWorld
             matias.Chilas(tal2);
             matias.Chilas(tal3);
             matias.Chilas(tal4);
+            matias.Chilas(matias.RandomNumbers());
 
         }
         // chilas
@@ -106,6 +107,20 @@ class Gustav
             temp = temp2;
         }
         Console.WriteLine(temp);
+    }
+
+    public int[] RandomNumbers() {
+        Random random = new Random();
+        int arraynumber = random.Next(3,10);
+        int[] array = new int[arraynumber];
+        for (int i = 0; i < array.Length; i++)
+        {
+            int number = random.Next(1, 100);
+
+            array[i] = number;
+        }
+        Console.WriteLine("[{0}]", string.Join(", ", array));
+        return array;
     }
 }
 
