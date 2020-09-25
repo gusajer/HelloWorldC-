@@ -14,15 +14,15 @@ namespace HelloWorld
         {
             // gustav
             OddEven lala = new OddEven();
-            lala.Even(tal);
+            //lala.Even(tal);
             //chilas
-            Matias(tal);
+           // Matias(tal);
             // matias
             Console.WriteLine("Hello World!" + "\n");
             Gustav matias = new Gustav();
-            matias.Chilas(tal2);
-            matias.Chilas(tal3);
-            matias.Chilas(tal4);
+            //matias.Chilas(tal2);
+            //matias.Chilas(tal3);
+            //matias.Chilas(tal4);
             matias.Chilas(matias.RandomNumbers());
 
         }
@@ -64,16 +64,16 @@ class OddEven
     public void Even(int[] array)
     {
 
-        for (int i = 0; i < array.Length ; i++)
+        for (int i = 0; i < array.Length; i++)
         {
             if (array[i] % 2 != 0)
             {
-                    Console.Write(array[i] + "\n");
+                Console.Write(array[i] + "\n");
 
             }
 
         }
-       
+
     }
 }
 // matias
@@ -106,18 +106,49 @@ class Gustav
         {
             temp = temp2;
         }
-        Console.WriteLine(temp);
+        //Console.WriteLine(temp);
     }
 
-    public int[] RandomNumbers() {
+    public int[] RandomNumbers()
+    {
         Random random = new Random();
-        int arraynumber = random.Next(3,10);
+        int oddoreven = random.Next(0, 1);
+        int arraynumber = random.Next(3, 10);
+        int exception = random.Next(0, arraynumber);
         int[] array = new int[arraynumber];
+
+        int temp3 = -1;
+
+        if (oddoreven == 0)
+        {
+            temp3 = 0;
+        }
+        else { temp3 = 1; }
+
+
         for (int i = 0; i < array.Length; i++)
         {
             int number = random.Next(1, 100);
+            if (i == exception)
+            {
+                if (number % 2 == temp3)
+                {
+                    array[i] = number - 1;
+                }
+                else
+                {
+                    array[i] = number;
+                }
+            }
+            else if (number % 2 == temp3)
+            {
+                array[i] = number;
+            }
+            else
+            {
+                array[i] = number + 1;
+            }
 
-            array[i] = number;
         }
         Console.WriteLine("[{0}]", string.Join(", ", array));
         return array;
