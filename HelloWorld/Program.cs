@@ -16,7 +16,7 @@ namespace HelloWorld
             OddEven lala = new OddEven();
             //lala.Even(tal);
             //chilas
-           // Matias(tal);
+            // Matias(tal);
             // matias
             Console.WriteLine("Hello World!" + "\n");
             Gustav matias = new Gustav();
@@ -112,43 +112,58 @@ class Gustav
     public int[] RandomNumbers()
     {
         Random random = new Random();
-        int oddoreven = random.Next(0, 1);
+        int oddoreven = random.Next(0, 2);
         int arraynumber = random.Next(3, 10);
         int exception = random.Next(0, arraynumber);
         int[] array = new int[arraynumber];
-
-        int temp3 = -1;
-
-        if (oddoreven == 0)
-        {
-            temp3 = 0;
-        }
-        else { temp3 = 1; }
-
-
         for (int i = 0; i < array.Length; i++)
         {
             int number = random.Next(1, 100);
-            if (i == exception)
+            if (oddoreven == 0)
             {
-                if (number % 2 == temp3)
+                if (i == exception)
                 {
-                    array[i] = number - 1;
+                    if (number % 2 == 0)
+                    {
+                        array[i] = number - 1;
+                    }
+                    else
+                    {
+                        array[i] = number;
+                    }
                 }
-                else
+                else if (number % 2 == 0)
                 {
                     array[i] = number;
                 }
-            }
-            else if (number % 2 == temp3)
-            {
-                array[i] = number;
-            }
-            else
-            {
-                array[i] = number + 1;
-            }
+                else
+                {
+                    array[i] = number + 1;
+                }
 
+            }
+            else if (oddoreven == 1)
+            {
+                if (i == exception)
+                {
+                    if (number % 2 != 0)
+                    {
+                        array[i] = number - 1;
+                    }
+                    else
+                    {
+                        array[i] = number;
+                    }
+                }
+                else if (number % 2 != 0)
+                {
+                    array[i] = number;
+                }
+                else
+                {
+                    array[i] = number + 1;
+                }
+            }
         }
         Console.WriteLine("[{0}]", string.Join(", ", array));
         return array;
